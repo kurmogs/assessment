@@ -2,13 +2,15 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-
 public class ToolRentalTest {
 
     @Test
     public void testRentalAgreement1() throws Exception {
-        RentalAgreement agreement = ToolRental.checkout("JAKR", 5, 101, "09/03/15");
-        assertNotNull(agreement);
+        try {
+            RentalAgreement agreement = ToolRental.checkout("JAKR", 5, 101, "09/03/15");
+            fail("Expected exception not thrown");
+        } catch (Exception exception) {
+        }
     }
 
     @Test
